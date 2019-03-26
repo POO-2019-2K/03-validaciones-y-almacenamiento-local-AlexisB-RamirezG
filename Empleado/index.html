@@ -1,0 +1,181 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employees</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:black" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h1 {
+            font-family: "Montserrat", "black";
+            font-size: 65px;
+            color: rgb(209, 40, 79);
+        }
+
+        label {
+            font-family: "Montserrat", "black";
+            color: rgb(238, 187, 18);
+        }
+
+        h3 {
+            font-family: "Montserrat";
+            color: rgb(212, 65, 99);
+        }
+
+        p {
+            font-family: "Montserrat", "black";
+            font-size: 30px;
+            color: rgb(255, 116, 103);
+        }
+
+        .jumbotron {
+            background-image: linear-gradient(to bottom right, rgb(252, 241, 206), rgb(252, 217, 103));
+            height: 80;
+        }
+
+        #column2 {
+            padding-top: 40px;
+        }
+
+        td {
+            font-family: "Aleo";
+            color: black;
+        }
+
+        #agenda {
+            padding-left: 50px;
+        }
+
+        th {
+            font-family: "Montserrat";
+            color: rgb(212, 65, 99);
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+
+        table {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div>
+            <h1>EMPLOYEES</h1>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Employee Data</h3>
+            </div>
+        </div>
+        <form id="form" class="col-4 needs validation" novalidate>
+            <div>
+                <div class="form-group">
+                    <label for="employeeID">Employee ID</label>
+                    <input type="text" id="employeeID" class="form-control" placeholder="Identifier of employee">
+                    <div class="valid-feedback">Correct</div>
+                    <div class="invalid-feedback">This field is obligatory</div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Your name">
+                    <div class="valid-feedback">Correct</div>
+                    <div class="invalid-feedback">This field is obligatory</div>
+                </div>
+                <div class="form-group">
+                    <label for="birthDate">Birth Date</label>
+                    <input type="date" id="birthDate" class="form-control" placeholder="Your birth date">
+                    <div class="valid-feedback">Correct</div>
+                    <div class="invalid-feedback">This field is obligatory</div>
+                </div>
+                <div class="form-group">
+                    <label for="hiringDate">Hiring Date</label>
+                    <input type="date" id="hiringDate" class="form-control" placeholder="The date you were hired">
+                    <div class="valid-feedback">Correct</div>
+                    <div class="invalid-feedback">This field is obligatory</div>
+                </div>
+                <div class="form-group">
+                    <label for="wage">Wage</label>
+                    <input type="text" id="wage" class="form-control" placeholder="Your mensual income">
+                    <div class="valid-feedback">Correct</div>
+                    <div class="invalid-feedback">This field is obligatory</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 align-item">
+                        <button type="button" id="bttnPerform" class="btn btn-warning">Perform</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <table id="stats" class="table col-md-3 table-bordered">
+                <thead>
+                    <tr>
+                        <th>Indicator</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Employees with wages below \$10,000</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Employees with wages between $10,000 and $20,000</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Employees with wages above \$20,000</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Average wage</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Average age</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <table id="employees" class="table col-md-8 table-bordered">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Birth date</th>
+                        <th>Hiring date</th>
+                        <th>Wage</th>
+                        <th>Age</th>
+                        <th>Seniorship</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="main.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
